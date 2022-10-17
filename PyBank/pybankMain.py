@@ -21,10 +21,10 @@ with open(csvpath) as csvfile:
         profit.append(float(row[1]))
     profit_total = int(sum(profit)) #setting up this variable to be formatted as a dollar value when printing
 
-#loop through data to calculate the greatest increase and decrease of profit
+#loop through data to calculate the greatest increase and decrease of profit.
 
     for value in range(1,len(profit)):
-        profit_change.append(profit[value] - profit[value-1])
+        profit_change.append(profit[value] - profit[value-1]) #i had help with this and don't fully understand the function of this calculation
         avg_profit = round(sum(profit_change)/len(profit_change),2)
         max_profit = max(profit_change)
         min_profit = min(profit_change)
