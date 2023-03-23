@@ -1,113 +1,115 @@
-# Unit 3 Homework: Python
 
-In this assignment, you'll complete two challenges in which you'll apply your new Python skills. 
+# Election Results Analysis
 
-## Background
+## Overview
 
-It's time to put away the Excel sheet and join the big leagues. Welcome to the world of programming with Python. In this homework assignment, you'll use the concepts you've learned to complete the **two** Python challenges, PyBank and PyPoll.
+This simple Python script reads a CSV file containing election data and calculates the total number of votes, the percentage of votes for each candidate, and the winner of the election. The script outputs the election results to the console and saves them to a text file.
 
-Both of these challenges present a real-world situation where your newfound Python scripting skills can come in handy. These challenges aren't easy, so expect some hard work ahead!
+## Requirements
 
-## Setup
+To run this script, you need Python 3.x and the CSV file `election_data.csv` stored in a folder named "Resources". You should also have a folder called "Analysis" to store a text file. The file structure requirments are already setup if you clone the repository.
 
-Before starting the assignment, be sure to do the following:
+## Usage
 
-* Create a new repository for this project called `python-challenge`. **Do not add this homework assignment to an existing repository**.
+1. Clone this repository.
+2. Ensure the "Resources" folder containing the `election_data.csv` file is in the same directory as the script.
+3. Open your preferred terminal and navigate to the directory containing the `pollingResults.py` script.
+4. Run the script by typing `python pollingResults.py` and pressing Enter.
 
-* Clone the new repository to your computer.
+After running the script, you will see the election results displayed in the console. Additionally, a text file named `pollAnalysis.txt` containing the election results will be created in a folder named "Analysis" in the same directory.
 
-* Inside your local git repository, create a directory for each Python challenge. Use folder names corresponding to the challenges: **PyBank** and  **PyPoll**.
+## Election Data Format
 
-* Inside of each folder that you just created, add the following:
+The election data in the CSV file should have the following format:
 
-  * A new file called `main.py`. This will be the main script to run for each analysis.
-  * A `Resources` folder that contains the CSV files you used. Make sure your script has the correct path to the CSV file.
-  * An `analysis` folder that contains your text file that has the results from your analysis.
+```
+Ballot ID,County,Candidate
+123456,SomeCounty,John Doe
+234567,AnotherCounty,Jane Smith
+345678,AnotherCounty,Pat Gray
+```
 
-* Push these changes to GitHub or GitLab.
+## Output
 
-## PyBank Instructions
+The script outputs the following election results:
 
-In this challenge, you are tasked with creating a Python script to analyze the financial records of your company. You will give a set of financial data called [budget_data.csv](PyBank/Resources/budget_data.csv). The dataset is composed of two columns: "Date" and "Profit/Losses". (Thankfully, your company has rather lax standards for accounting, so the records are simple.)
+* Total Votes: The total number of votes in the election
+* A list of candidates with their respective vote percentage and total vote count
+* The winner of the election
 
-Your task is to create a Python script that analyzes the records to calculate each of the following:
+The output will have the following format:
 
-* The total number of months included in the dataset
+```
+Election Results
+____________________________
+Total Votes: 1,000,000
+____________________________
+Jane Smith: 50.00% (500,000)
+John Doe: 20.00% (200,000)
+Pat Gray: 30.00% (300,000)
+____________________________
+Winner: Jane Smith
+```
 
-* The net total amount of "Profit/Losses" over the entire period
+## Customization
 
-* The changes in "Profit/Losses" over the entire period, and then the average of those changes
+To analyze a different election dataset, simply replace the `election_data.csv` file in the "Resources" folder with your own CSV file following the same format as described in the "Election Data Format" section. Make sure the new file is named `election_data.csv` or update the `csvpath` variable in the script to match the new file name.
 
-* The greatest increase in profits (date and amount) over the entire period
-
-* The greatest decrease in profits (date and amount) over the entire period
-
-Your analysis should look similar to the following:
-
-  ```text
-  Financial Analysis
-  ----------------------------
-  Total Months: 86
-  Total: $22564198
-  Average Change: $-8311.11
-  Greatest Increase in Profits: Aug-16 ($1862002)
-  Greatest Decrease in Profits: Feb-14 ($-1825558)
-  ```
-
-In addition, your final script should both print the analysis to the terminal and export a text file with the results.
-
-## PyPoll Instructions
-
-In this challenge, you are tasked with helping a small, rural town modernize its vote counting process.
-
-You will be given a set of poll data called [election_data.csv](PyPoll/Resources/election_data.csv). The dataset is composed of three columns: "Voter ID", "County", and "Candidate". Your task is to create a Python script that analyzes the votes and calculates each of the following:
-
-* The total number of votes cast
-
-* A complete list of candidates who received votes
-
-* The percentage of votes each candidate won
-
-* The total number of votes each candidate won
-
-* The winner of the election based on popular vote.
-
-Your analysis should look similar to the following:
+---
 
 
-  ```text
-  Election Results
-  -------------------------
-  Total Votes: 369711
-  -------------------------
-  Charles Casper Stockham: 23.049% (85213)
-  Diana DeGette: 73.812% (272892)
-  Raymon Anthony Doane: 3.139% (11606)
-  -------------------------
-  Winner: Diana DeGette
-  -------------------------
-  ```
 
-In addition, your final script should both print the analysis to the terminal and export a text file with the results.
+# Budget Data Analysis
 
-## Hints and Considerations
+## Overview
 
-* Consider what you've learned so far. You've learned how to import modules like `csv`; to read and write files in various formats; to store contents in variables, lists, and dictionaries; to iterate through basic data structures; and to debug along the way. Using what you've learned, try to break down your tasks into discrete mini-objectives. 
+This Python script reads a CSV file containing budget data and calculates the total number of months, the net total amount of profit/losses, the average change in profit/losses, the greatest increase in profits, and the greatest decrease in losses. The script outputs the financial analysis to the console and saves it to a text file.
 
-* The datasets for these challenges are quite large. This was done purposefully, as it showcases one of the limits of Excel-based analysis. As data analysts, our first instinct is often to go straight to Excel, but creating scripts in Python can provide us with more robust options for handling big data.
+## Requirements
 
-* Write one script for each dataset provided. Run your script separately to make sure that the code works for its respective dataset.
+To run this script, you need Python 3.x and the CSV file `budget_data.csv` stored in a folder named "Resources". You should also have a folder called "Analysis" to store a text file. The file structure requirments are already setup if you clone the repository.
 
-* Feel encouraged to work in groups, but don't shortchange yourself by copying someone else's work. You get what you put in, and the art of programming is extremely unforgiving to those who don't do their own work. 
+## Usage
 
-* Start early, and reach out for help when you need it! Be sure to identify specific questions for your instructors and TAs so that they understand your thought process and can provide targeted guidance.
+1. Clone this repository or download the script `financialResults.py` to your local machine.
+2. Ensure the "Resources" folder containing the `budget_data.csv` file is in the same directory as the script.
+3. Open a terminal (Command Prompt, PowerShell, or Terminal) and navigate to the directory containing the script.
+4. Run the script by typing `python financialResults.py` and pressing Enter.
 
-* Always commit your work and back it up with pushes to GitHub or GitLab. You don't want to lose hours of your work! Also make sure that your repo has a detailed   `README.md` file. 
+After running the script, you will see the financial analysis displayed in the console. Additionally, a text file named `financeResults.txt` containing the financial analysis will be created in a folder named "Analysis" in the same directory as the script.
 
-## Rubric
+## Budget Data Format
 
-[Unit 3 Homework Rubric](https://docs.google.com/document/d/1Q5ZnMUD12NvbElOgE3a_lcahuRZdv83aDu9VtXZRiGg/edit?usp=sharing)
+The budget data in the CSV file should have the following format:
 
-- - -
+```
+Date,Profit/Losses
+Jan-2010,867884
+Feb-2010,984655
+```
 
-© 2022 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
+## Output
+
+The script outputs the following financial analysis:
+
+* Total Months: The total number of months in the dataset
+* Profit Total: The net total amount of profit/losses
+* Average Change: The average change in profit/losses over the entire period
+* Greatest Increase in Profit: The maximum increase in profit from one month to the next
+* Greatest Loss in Profit: The maximum decrease in profit from one month to the next
+
+The output will have the following format:
+
+```
+Financial Analysis
+____________________________
+Total Months: 42
+Profit Total: $34,567,891
+Average Change: $-2,345.67
+Greatest Increase in Profit: $1,234,567
+Greatest Loss in Profit: $-2,345,678
+```
+
+## Customization
+
+Follow the same instructions as above.

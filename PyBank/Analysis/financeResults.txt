@@ -5,3 +5,4 @@ Profit Total: $22,564,198
 Average Change: $-8,311.11
 Greatest Increase in Profit: $1,862,002
 Greatest Loss in Profit: $-1,825,558
+____________________________
